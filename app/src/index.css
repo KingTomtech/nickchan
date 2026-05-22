@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 20 20% 3%;
+    --foreground: 30 30% 93%;
+    --card: 20 25% 10%;
+    --card-foreground: 30 30% 93%;
+    --popover: 20 25% 10%;
+    --popover-foreground: 30 30% 93%;
+    --primary: 18 65% 48%;
+    --primary-foreground: 30 30% 95%;
+    --secondary: 25 25% 11%;
+    --secondary-foreground: 30 30% 93%;
+    --muted: 20 15% 15%;
+    --muted-foreground: 25 12% 52%;
+    --accent: 25 45% 62%;
+    --accent-foreground: 20 20% 3%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 25 30% 18%;
+    --input: 25 30% 18%;
+    --ring: 18 65% 48%;
+    --radius: 0.625rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-ysm-deepest text-ysm-sand font-inter antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: rgba(200, 90, 42, 0.3);
+    color: #F5E6D3;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-ysm-earth/60 backdrop-blur-xl rounded-2xl border border-ysm-clay/15;
+  }
+
+  .glass-card-hover {
+    @apply glass-card transition-all duration-500;
+  }
+
+  .glass-card-hover:hover {
+    @apply -translate-y-2 border-ysm-terracotta/40;
+    box-shadow: 0 0 60px rgba(200, 90, 42, 0.15);
+  }
+
+  .pill-button {
+    @apply inline-flex items-center justify-center rounded-full font-inter font-medium text-xs tracking-widest uppercase transition-all duration-400;
+  }
+
+  .pill-button-primary {
+    @apply pill-button bg-ysm-terracotta text-ysm-glow px-8 py-3.5;
+  }
+
+  .pill-button-primary:hover {
+    @apply brightness-110;
+  }
+
+  .pill-button-secondary {
+    @apply pill-button border border-ysm-clay/40 text-ysm-sand px-8 py-3.5 bg-transparent;
+  }
+
+  .pill-button-secondary:hover {
+    @apply border-ysm-clay/70 bg-ysm-clay/10;
+  }
+
+  .section-label {
+    @apply font-inter font-medium text-xs tracking-[0.12em] uppercase text-ysm-clay;
+  }
+
+  .section-heading {
+    @apply font-playfair font-semibold text-ysm-glow leading-tight;
+    font-size: clamp(32px, 5vw, 64px);
+    letter-spacing: -0.01em;
+  }
+
+  .section-body {
+    @apply font-inter text-ysm-sand text-base leading-relaxed;
+  }
+}
+
+@layer utilities {
+  .duration-400 {
+    transition-duration: 400ms;
+  }
+
+  .duration-500 {
+    transition-duration: 500ms;
+  }
+
+  .duration-800 {
+    transition-duration: 800ms;
+  }
+}
